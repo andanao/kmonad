@@ -1,0 +1,35 @@
+#|
+Configuration for Microsoft Surface keyboard laptop running windows (bleh)
+|#
+
+(defcfg
+  input  (low-level-hook)
+  output (send-event-sink 400 25) ;; A bit faster than default windows
+  allow-cmd true
+)
+
+(defalias
+  f4      (tap-hold-next 300 f4 caps)
+  caps    (tap-next esc lctl)
+)
+
+(defsrc
+  esc     f1      f2      f3      f4      f5      f6      f7      f8      f9      f10     f11     f12     prnt    ins     del
+  `       1       2       3       4       5       6       7       8       9       0       -       =       bspc
+  tab     q       w       e       r       t       y       u       i       o       p       [       ]       \
+  caps    a       s       d       f       g       h       j       k       l       ;       '       ret
+  lsft    z       x       c       v       b       n       m       ,       .       /       rsft
+  lctl            lmet    lalt            spc                     ralt    cmp left    up      down    rght
+
+)
+
+
+(deflayer default
+  esc     f1      f2      f3      @f4     f5      f6      f7      f8      f9      f10     f11     f12     ins     prnt    del
+  `       1       2       3       4       5       6       7       8       9       0       -       =       bspc
+  tab     q       w       e       r       t       y       u       i       o       p       [       ]       \
+  @caps   a       s       d       f       g       h       j       k       l       ;       '       ret
+  lsft    z       x       c       v       b       n       m       ,       .       /       rsft
+  lctl            lmet    lalt            spc                     ralt    rctrl           left    up      down    rght
+)
+

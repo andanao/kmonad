@@ -1,0 +1,3 @@
+#+TITLE:KMonad Config
+
+See [[file:surface.kbd][surface.kbd]] for my config file for my primary computer
